@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" href="data:,">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Corrector y mejorador de redacción con un modelo de lenguaje local">
+  <title>Corrector de redacción con IA local</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Corrector y mejorador de redacción</h1>
+    <p>Tu texto se procesa en tu propio computador, sin enviarlo a internet.</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="titulo-entrada">
+      <h2 id="titulo-entrada">Tu texto</h2>
+      <form id="formulario">
+        <label for="texto-entrada">Escribe o pega el texto que quieres mejorar</label>
+        <textarea id="texto-entrada" rows="8" required></textarea>
+
+        <fieldset id="modos">
+          <legend>¿Qué quieres hacer?</legend>
+          <label><input type="radio" name="modo" value="corregir" checked> Corregir ortografía</label>
+          <label><input type="radio" name="modo" value="mejorar"> Mejorar redacción</label>
+          <label><input type="radio" name="modo" value="formal"> Hacerlo formal</label>
+          <label><input type="radio" name="modo" value="resumir"> Resumir</label>
+        </fieldset>
+
+        <button type="submit" id="boton-procesar">Mejorar texto</button>
+      </form>
+      <p id="estado" role="status"></p>
+    </section>
+
+    <section aria-labelledby="titulo-resultado">
+      <h2 id="titulo-resultado">Resultado</h2>
+      <div id="resultado" aria-live="polite" tabindex="0"></div>
+      <button type="button" id="boton-copiar">Copiar resultado</button>
+    </section>
+
+    <section aria-labelledby="titulo-historial">
+      <h2 id="titulo-historial">Historial</h2>
+      <button type="button" id="boton-historial"
+              aria-expanded="false" aria-controls="panel-historial">
+        Ver historial
+      </button>
+      <div id="panel-historial" hidden>
+        <button type="button" id="boton-borrar">Borrar historial</button>
+        <ul id="lista-historial"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto final de Desarrollo web, UNISANGIL</p>
+  </footer>
+
+  <script type="module" src="js/app.mjs"></script>
+</body>
+</html>
